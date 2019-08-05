@@ -28,23 +28,23 @@ $api->version('v1', [
 
     // 第三方登录
     $api->post('socials/{social_type}/authorizations', 'AuthorizationsController@socialStore')
-        ->name('api.socials.authorizations.store');
+    ->name('api.socials.authorizations.store');
 
 
 });
 
 // 以下代码做测试用
 
-$api = app('Dingo\Api\Routing\Router');
+// $api = app('Dingo\Api\Routing\Router');
 
-$api->version('v1', function($api) {
-    $api->get('version', function() {
-        return response('this is version v1');
-    });
-});
+// $api->version('v1', function($api) {
+//     $api->get('version', function() {
+//         return response('this is version v1');
+//     });
+// });
 
-$api->version('v2', function($api) {
-    $api->get('version', function() {
-        return response('this is version v2');
-    });
-});
+// $api->version('v2', function($api) {
+//     $api->get('version', function() {
+//         return response('this is version v2');
+//     });
+// });

@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Requests\Api\SocialAuthorizationRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+use App\Http\Requests\Api\SocialAuthorizationRequest;
 
 class AuthorizationsController extends Controller
 {
@@ -18,7 +17,7 @@ class AuthorizationsController extends Controller
         }
 
         $driver = \Socialite::driver($type);
-
+        dd($driver);
         try{
             if ($code = $request->code){
                 $response = $driver->getAccessTokenResponse($code);
