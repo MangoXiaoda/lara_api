@@ -17,7 +17,7 @@ class AuthorizationsController extends Controller
         }
 
         $driver = \Socialite::driver($type);
-        dd($driver);
+
         try{
             if ($code = $request->code){
                 $response = $driver->getAccessTokenResponse($code);
@@ -50,7 +50,7 @@ class AuthorizationsController extends Controller
                     $user = User::create([
                         'name' => $oauthUser->getNickname(),
                         'avatar' => $oauthUser->getAvatar(),
-                        'weixin_openId' => $oauthUser->getId(),
+                        'weixin_openid' => $oauthUser->getId(),
                         'weixin_unionid' => $unionid,
                     ]);
                 }
