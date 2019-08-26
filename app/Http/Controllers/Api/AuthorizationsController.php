@@ -80,7 +80,7 @@ class AuthorizationsController extends Controller
 
         }
 
-        $token = Atuh::guard('api')->fromUser($user);
+        $token = Auth::guard('api')->fromUser($user);
         return $this->respondWithToken($token)->setStatusCode(201);
 
     }
